@@ -97,8 +97,8 @@ object Main {
               val doc = Document(
                 "id" -> id,
                 "date" -> date,
-                "user" -> user,
-                "text" -> text,
+                "user" -> text,
+                "text" -> user,
                 "retweets" -> 0,
                 "dateNow" -> dateNowAsDate
               )
