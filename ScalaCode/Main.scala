@@ -85,10 +85,10 @@ object Main {
           Try {
             val fields = record.value().split(",", -1) // Splitting with limit to handle empty fields
             if (fields.length >= 5) {
-              val id = fields(0).filter(_.isDigit).toLong // Extracting only digits for the ID
-              val dateStr = fields(1)
-              val user = fields(3)
-              val text = fields(4)
+              val id = fields(1).filter(_.isDigit).toLong // Extracting only digits for the ID
+              val dateStr = fields(2)
+              val user = fields(4)
+              val text = fields(5)
               val dateNow = Instant.now()
 
               val dateNowAsDate = Date.from(dateNow)
@@ -97,8 +97,8 @@ object Main {
               val doc = Document(
                 "id" -> id,
                 "date" -> date,
-                "user" -> text,
-                "text" -> user,
+                "user" -> user,
+                "text" -> text,
                 "retweets" -> 0,
                 "dateNow" -> dateNowAsDate
               )
